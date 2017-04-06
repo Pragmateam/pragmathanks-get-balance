@@ -1,5 +1,7 @@
 # pragmathanks-get-balance
 
+[![Build Status](https://travis-ci.org/Pragmateam/pragmathanks-get-balance.svg?branch=master)](https://travis-ci.org/Pragmateam/pragmathanks-get-balance)
+
 Mid 2016 we found that people were regularly bringing this objective to life,
 whether it be experimenting with new techniques, organising a learning lunch,
 presenting at meetups, all with a positive impact on the rest of the team. But
