@@ -25,6 +25,11 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.1.1",
     "lambda-local": "^1.4.2",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0"
+  },
+  "dependencies": {
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^18.0.0"
   }
 }
