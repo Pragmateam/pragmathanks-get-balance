@@ -1,4 +1,5 @@
 const google = require('googleapis');
+const PragmaThanksSpreadsheet = require('./PragmaThanksSpreadsheet');
 
 const SPREADSHEET_ID = '';
 
@@ -14,7 +15,9 @@ const getBalance = (username) => {
     }, (err, response) => {
       if (err) return reject(err);
 
-      if (!response.values) return resolve('The spreadsheet is empty');
+      const spreadsheet = new PragmaThanksSpreadsheet(response.values);
+
+      if (spreadsheet.isEmpty()) return resolve('The spreadsheet is empty');
 
       const usernameList = response.values[2];
       const usernameIndex = usernameList.indexOf(username);
