@@ -7,20 +7,21 @@ const getBalance = require('../src/getBalance');
 describe('getBalance', () => {
   sinon.stub(google, 'sheets').withArgs('v4');
 
+  let spreadsheetContent = {};
   const sheets = {
     spreadsheets: {
       values: {
         get: (credentials, callback) => {
-          callback();
+          callback(null, spreadsheetContent);
         },
       },
     },
   };
 
-  it('returns empty balance message', (done) => {
-    google.sheets.returns(sheets);
+  beforeEach(() => google.sheets.returns(sheets));
 
-    getBalance('alabeduarte').then((balance) => {
+  it('returns empty balance message when content is empty', (done) => {
+    getBalance('foo').then((balance) => {
       expect(balance).to.eql('Your balance is 0 and you have 0 to give');
 
       done();
