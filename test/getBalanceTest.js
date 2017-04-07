@@ -22,13 +22,13 @@ describe('getBalance', () => {
 
   it('returns empty balance message when content is empty', (done) => {
     getBalance('foo').then((balance) => {
-      expect(balance).to.eql('Your balance is 0 and you have 0 to give');
+      expect(balance).to.eql('The spreadsheet is empty');
 
       done();
     }).catch(err => done(err));
   });
 
-  it('returns the balance when user has got at least one PragmaThanks', (done) => {
+  it('returns the balance when user has got at least one pragma points', (done) => {
     spreadsheetContent = {
       values: [
         [],
@@ -80,6 +80,25 @@ describe('getBalance', () => {
 
     getBalance('unkown').then((balance) => {
       expect(balance).to.eql('It seems you are not on our records.');
+
+      done();
+    }).catch(err => done(err));
+  });
+
+  it('returns the points to give when user has got at least one pragma points to give', (done) => {
+    spreadsheetContent = {
+      values: [
+        [],
+        [],
+        ['foo', 'bar'],
+        [],
+        [0, 3],
+        [30, 44],
+      ],
+    };
+
+    getBalance('foo').then((balance) => {
+      expect(balance).to.eql('Your balance is 0 and you have 30 to give');
 
       done();
     }).catch(err => done(err));
