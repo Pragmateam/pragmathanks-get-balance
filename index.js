@@ -2,7 +2,9 @@ const getBalance = require('./src/getBalance');
 
 exports.handler = (event, context, callback) => {
   console.info('event: ', event);
-  const username = event.username;
+  const username = event.user_name;
 
-  callback(null, getBalance(username));
+  getBalance(username).then((balance) => {
+    callback(null, getBalance(username));
+  });
 };
