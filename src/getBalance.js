@@ -26,10 +26,8 @@ const getBalance = (username) => {
         return resolve('It seems you are not on our records.');
       }
 
-      const pointsToGiveList = response.values[5];
-
       const balance = spreadsheet.getBalance(username);
-      const pointsToGive = pointsToGiveList[usernameIndex];
+      const pointsToGive = spreadsheet.getPointsToGive(username);
 
       return resolve(`Your balance is ${balance} and you have ${pointsToGive} to give`);
     });
