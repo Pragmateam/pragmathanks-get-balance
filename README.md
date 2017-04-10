@@ -72,11 +72,36 @@ stored your lambda function.
 export PRAGMATHANKS_S3_BUCKET=yourbucket
 ```
 
+### Turn on the Google Sheets API
+
+In order to play around with google API it also required to setup a project on
+Google Developers Console. Use [this
+wizard](https://console.developers.google.com/start/api?id=sheets.googleapis.com)
+to create or select a project in the Google Developers Console and automatically
+turn on the API. You can also follow the
+[step by step guide](https://developers.google.com/sheets/api/quickstart/nodejs#prerequisites)
+an learn how to get all those credentials. At the end you
+must export them as environment variables as follows:
+
+```
+export GOOGLE_CLIENT_ID='<VALUE>'
+export GOOGLE_CLIENT_SECRET='<VALUE>'
+export GOOGLE_PROJECT_ID='<VALUE>'
+export GOOGLE_AUTH_URI='<VALUE>'
+export GOOGLE_TOKEN_URI='<VALUE>'
+export GOOGLE_AUTH_PROVIDER_CERT_URL='<VALUE>'
+export GOOGLE_REDIRECT_URIS_FIRST='<VALUE>'
+export GOOGLE_REDIRECT_URIS_LAST='<VALUE>'
+export SPREADSHEET_ID='<VALUE>'
+```
+
+Finnally, install and initialize your infrastructure with terraform:
+
 ```
 $ make terraform-install
 ```
 
-Then you should be ready to deploy your lambda:
+Then you should be ready to deploy your lambda to AWS:
 
 ```
 $ make deploy

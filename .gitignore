@@ -4,4 +4,3 @@
 *.DS_Store
 **/.terraform/**
 *.env
-client_secret.json
