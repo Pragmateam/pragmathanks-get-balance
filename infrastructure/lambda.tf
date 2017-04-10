@@ -7,6 +7,9 @@ variable "google_token_uri" {}
 variable "google_auth_provider_cert_url" {}
 variable "google_redirect_uris_first" {}
 variable "google_redirect_uris_last" {}
+variable "google_access_token" {}
+variable "google_refresh_token" {}
+variable "google_token_expiry_date" {}
 variable "spreadsheet_id" {}
 
 resource "aws_iam_role" "iam_for_pragmathanks_get_balance_lambda" {
@@ -88,6 +91,9 @@ resource "aws_lambda_function" "pragmathanks_get_balance_lambda" {
       google_auth_provider_cert_url="${var.google_auth_provider_cert_url}"
       google_redirect_uris_first="${var.google_redirect_uris_first}"
       google_redirect_uris_last="${var.google_redirect_uris_last}"
+      google_access_token="${var.google_access_token}"
+      google_refresh_token="${var.google_refresh_token}"
+      google_token_expiry_date="${var.google_token_expiry_date}"
       spreadsheet_id="${var.spreadsheet_id}"
     }
   }

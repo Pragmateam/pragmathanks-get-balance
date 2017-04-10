@@ -17,6 +17,9 @@ terraform destroy \
   -var google_auth_provider_cert_url=${GOOGLE_AUTH_PROVIDER_CERT_URL} \
   -var google_redirect_uris_first=${GOOGLE_REDIRECT_URIS_FIRST} \
   -var google_redirect_uris_last=${GOOGLE_REDIRECT_URIS_LAST} \
+  -var google_access_token=${GOOGLE_ACCESS_TOKEN} \
+  -var google_refresh_token=${GOOGLE_REFRESH_TOKEN} \
+  -var google_token_expiry_date=${GOOGLE_TOKEN_EXPIRY_DATE} \
   -var spreadsheet_id=${SPREADSHEET_ID} \
   -force
 
