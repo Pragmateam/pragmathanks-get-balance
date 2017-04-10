@@ -5,7 +5,7 @@ test:
 	npm test
 
 run:
-	npm start $(username)
+	npm start $(username) $(user_name)
 
 build:
 	rm -f pragmathanks_get_balance_lambda.zip
