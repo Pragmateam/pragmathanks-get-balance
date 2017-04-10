@@ -58,7 +58,7 @@ describe('PragmaThanksSpreadsheet', () => {
         [],
         [0, 0],
         [30, 44],
-      ];
+    ];
 
     const sheet = new PragmaThanksSpreadsheet(spreadsheetContent);
 

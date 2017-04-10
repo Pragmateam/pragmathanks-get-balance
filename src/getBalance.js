@@ -1,10 +1,9 @@
 const google = require('googleapis');
 const PragmaThanksSpreadsheet = require('./PragmaThanksSpreadsheet');
 
-const SPREADSHEET_ID = '';
+const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 
-const getBalance = (username) => {
-  const auth = {};
+const getBalance = (auth, username) => {
   const sheets = google.sheets('v4');
 
   return new Promise((resolve, reject) => {

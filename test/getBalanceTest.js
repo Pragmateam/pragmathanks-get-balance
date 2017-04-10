@@ -8,6 +8,7 @@ describe('getBalance', () => {
   sinon.stub(google, 'sheets').withArgs('v4');
 
   let spreadsheetContent = [];
+  const auth = {};
   const sheets = {
     spreadsheets: {
       values: {
@@ -21,7 +22,7 @@ describe('getBalance', () => {
   beforeEach(() => google.sheets.returns(sheets));
 
   it('returns empty balance message when content is empty', (done) => {
-    getBalance('foo').then((balance) => {
+    getBalance(auth, 'foo').then((balance) => {
       expect(balance).to.eql('The spreadsheet is empty');
 
       done();
@@ -40,7 +41,7 @@ describe('getBalance', () => {
       ],
     };
 
-    getBalance('foo').then((balance) => {
+    getBalance(auth, 'foo').then((balance) => {
       expect(balance).to.eql('Your balance is 1 and you have 0 to give');
 
       done();
@@ -59,7 +60,7 @@ describe('getBalance', () => {
       ],
     };
 
-    getBalance('bar').then((balance) => {
+    getBalance(auth, 'bar').then((balance) => {
       expect(balance).to.eql('Your balance is 42 and you have 0 to give');
 
       done();
@@ -78,7 +79,7 @@ describe('getBalance', () => {
       ],
     };
 
-    getBalance('unkown').then((balance) => {
+    getBalance(auth, 'unkown').then((balance) => {
       expect(balance).to.eql('Your balance is 0 and you have 0 to give');
 
       done();
@@ -97,7 +98,7 @@ describe('getBalance', () => {
       ],
     };
 
-    getBalance('foo').then((balance) => {
+    getBalance(auth, 'foo').then((balance) => {
       expect(balance).to.eql('Your balance is 0 and you have 30 to give');
 
       done();
@@ -118,7 +119,7 @@ describe('getBalance', () => {
     it('returns error', (done) => {
       google.sheets.returns(sheetsWithError);
 
-      getBalance('alabeduarte').catch((err) => {
+      getBalance(auth, 'alabeduarte').catch((err) => {
         expect(err).to.eql(new Error('Something went wrong'));
 
         done();
