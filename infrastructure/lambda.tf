@@ -1,4 +1,13 @@
 variable "pragmathanks_get_balance_s3_bucket" {}
+variable "google_client_id" {}
+variable "google_client_secret" {}
+variable "google_project_id" {}
+variable "google_auth_uri" {}
+variable "google_token_uri" {}
+variable "google_auth_provider_cert_url" {}
+variable "google_redirect_uris_first" {}
+variable "google_redirect_uris_last" {}
+variable "spreadsheet_id" {}
 
 resource "aws_iam_role" "iam_for_pragmathanks_get_balance_lambda" {
   name = "iam_for_pragmathanks_get_balance_lambda"
@@ -68,4 +77,18 @@ resource "aws_lambda_function" "pragmathanks_get_balance_lambda" {
   role = "${aws_iam_role.iam_for_pragmathanks_get_balance_lambda.arn}"
   handler = "index.handler"
   runtime = "nodejs6.10"
+
+  environment {
+    variables = {
+      google_client_id = "${var.google_client_id}"
+      google_client_secret = "${var.google_client_secret}"
+      google_project_id="${var.google_project_id}"
+      google_auth_uri="${var.google_auth_uri}"
+      google_token_uri="${var.google_token_uri}"
+      google_auth_provider_cert_url="${var.google_auth_provider_cert_url}"
+      google_redirect_uris_first="${var.google_redirect_uris_first}"
+      google_redirect_uris_last="${var.google_redirect_uris_last}"
+      spreadsheet_id="${var.spreadsheet_id}"
+    }
+  }
 }
