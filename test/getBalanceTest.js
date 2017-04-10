@@ -66,7 +66,7 @@ describe('getBalance', () => {
     }).catch(err => done(err));
   });
 
-  it('indicates that the user is not present on the spreadsheet when it can not be found', (done) => {
+  it('returns no balance and no points to give when user is not found', (done) => {
     spreadsheetContent = {
       values: [
         [],
@@ -79,7 +79,7 @@ describe('getBalance', () => {
     };
 
     getBalance('unkown').then((balance) => {
-      expect(balance).to.eql('It seems you are not on our records.');
+      expect(balance).to.eql('Your balance is 0 and you have 0 to give');
 
       done();
     }).catch(err => done(err));

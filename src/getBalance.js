@@ -16,15 +16,7 @@ const getBalance = (username) => {
       if (err) return reject(err);
 
       const spreadsheet = new PragmaThanksSpreadsheet(response.values);
-
       if (spreadsheet.isEmpty()) return resolve('The spreadsheet is empty');
-
-      const usernameList = response.values[2];
-      const usernameIndex = usernameList.indexOf(username);
-
-      if (usernameIndex < 0) {
-        return resolve('It seems you are not on our records.');
-      }
 
       const balance = spreadsheet.getBalance(username);
       const pointsToGive = spreadsheet.getPointsToGive(username);
