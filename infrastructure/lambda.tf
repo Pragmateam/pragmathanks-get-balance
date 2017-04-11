@@ -76,7 +76,7 @@ resource "aws_lambda_function" "pragmathanks_get_balance_lambda" {
   function_name = "pragmathanks_get_balance"
   s3_bucket = "${aws_s3_bucket_object.pragmathanks_get_balance_object.bucket}"
   s3_key = "${aws_s3_bucket_object.pragmathanks_get_balance_object.key}"
-  description = "Get your pragmathanks balance."
+  description = "Get your PragmaThanks balance."
   role = "${aws_iam_role.iam_for_pragmathanks_get_balance_lambda.arn}"
   handler = "index.handler"
   runtime = "nodejs6.10"
