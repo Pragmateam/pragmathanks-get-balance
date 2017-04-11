@@ -83,18 +83,18 @@ resource "aws_lambda_function" "pragmathanks_get_balance_lambda" {
 
   environment {
     variables = {
-      google_client_id = "${var.google_client_id}"
-      google_client_secret = "${var.google_client_secret}"
-      google_project_id="${var.google_project_id}"
-      google_auth_uri="${var.google_auth_uri}"
-      google_token_uri="${var.google_token_uri}"
-      google_auth_provider_cert_url="${var.google_auth_provider_cert_url}"
-      google_redirect_uris_first="${var.google_redirect_uris_first}"
-      google_redirect_uris_last="${var.google_redirect_uris_last}"
-      google_access_token="${var.google_access_token}"
-      google_refresh_token="${var.google_refresh_token}"
-      google_token_expiry_date="${var.google_token_expiry_date}"
-      spreadsheet_id="${var.spreadsheet_id}"
+      GOOGLE_CLIENT_ID = "${var.google_client_id}"
+      GOOGLE_CLIENT_SECRET = "${var.google_client_secret}"
+      GOOGLE_PROJECT_ID = "${var.google_project_id}"
+      GOOGLE_AUTH_URI = "${var.google_auth_uri}"
+      GOOGLE_TOKEN_URI = "${var.google_token_uri}"
+      GOOGLE_AUTH_PROVIDER_CERT_URL = "${var.google_auth_provider_cert_url}"
+      GOOGLE_REDIRECT_URIS_FIRST = "${var.google_redirect_uris_first}"
+      GOOGLE_REDIRECT_URIS_LAST = "${var.google_redirect_uris_last}"
+      GOOGLE_ACCESS_TOKEN = "${var.google_access_token}"
+      GOOGLE_REFRESH_TOKEN = "${var.google_refresh_token}"
+      GOOGLE_TOKEN_EXPIRY_DATE = "${var.google_token_expiry_date}"
+      SPREADSHEET_ID = "${var.spreadsheet_id}"
     }
   }
 }
