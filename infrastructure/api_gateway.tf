@@ -30,7 +30,7 @@ resource "aws_api_gateway_integration" "pragmathanks_get_balance_api_integration
 
   request_templates {
     "application/json" = <<EOF
-{ "username": "$input.params('text')" }
+{ "username": "$input.params('user_name')" }
 EOF
   }
 }
