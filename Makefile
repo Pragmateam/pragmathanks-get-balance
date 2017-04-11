@@ -13,7 +13,7 @@ build:
 	rm -f pragmathanks_get_balance_lambda.zip
 	rm -rf node_modules
 	npm install --only=production
-	zip pragmathanks_get_balance_lambda.zip index.js src/** node_modules/**
+	zip -r pragmathanks_get_balance_lambda.zip index.js src node_modules
 
 deploy:
 	$(MAKE) build
