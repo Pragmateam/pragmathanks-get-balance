@@ -93,6 +93,10 @@ export GOOGLE_AUTH_PROVIDER_CERT_URL='<VALUE>'
 export GOOGLE_REDIRECT_URIS_FIRST='<VALUE>'
 export GOOGLE_REDIRECT_URIS_LAST='<VALUE>'
 export SPREADSHEET_ID='<VALUE>'
+
+export GOOGLE_ACCESS_TOKEN='<VALUE>'
+export GOOGLE_REFRESH_TOKEN='<VALUE>'
+export GOOGLE_TOKEN_EXPIRY_DATE=<time in miliseconds>
 ```
 
 Finnally, install and initialize your infrastructure with terraform:
