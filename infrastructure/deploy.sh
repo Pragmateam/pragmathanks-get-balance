@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 npm install
-node ./infrastructure/claudiaJsonCreator.js
-ls -lah
+node ./infrastructure/claudiaDynamicSetup.js
 ./node_modules/.bin/claudia update --config claudia.json
 
 # First time deploy
