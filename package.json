@@ -7,7 +7,7 @@
     "autofix-lint": "eslint test/** src/** --fix",
     "pretest": "eslint test/** src/**",
     "test": "mocha --recursive",
-    "start": "lambda-local -l index.js -h handler -e event-samples/username.js"
+    "start": "node example/local.js"
   },
   "keywords": [
     "pragmateam",
@@ -16,8 +16,14 @@
     "pragmathanks"
   ],
   "license": "MIT",
+  "dependencies": {
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^18.0.0",
+    "claudia-api-builder": "^2.4.1"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
+    "claudia": "^2.11.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-config-standard": "^7.1.0",
@@ -27,9 +33,5 @@
     "lambda-local": "^1.4.2",
     "mocha": "^3.2.0",
     "sinon": "^2.1.0"
-  },
-  "dependencies": {
-    "google-auth-library": "^0.10.0",
-    "googleapis": "^18.0.0"
   }
 }

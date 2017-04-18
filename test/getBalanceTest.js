@@ -24,9 +24,8 @@ describe('getBalance', () => {
   it('returns empty balance message when content is empty', (done) => {
     getBalance(auth, 'foo').then((balance) => {
       expect(balance).to.eql('The spreadsheet is empty');
-
-      done();
-    }).catch(err => done(err));
+    }).then(done)
+      .catch(err => done(err));
   });
 
   it('returns the balance when user has got at least one pragma points', (done) => {
@@ -43,9 +42,8 @@ describe('getBalance', () => {
 
     getBalance(auth, 'foo').then((balance) => {
       expect(balance).to.eql('Your balance is 1 and you have 0 to give');
-
-      done();
-    }).catch(err => done(err));
+    }).then(done)
+      .catch(err => done(err));
   });
 
   it('returns the balance for different users', (done) => {
@@ -62,9 +60,8 @@ describe('getBalance', () => {
 
     getBalance(auth, 'bar').then((balance) => {
       expect(balance).to.eql('Your balance is 42 and you have 0 to give');
-
-      done();
-    }).catch(err => done(err));
+    }).then(done)
+      .catch(err => done(err));
   });
 
   it('returns no balance and no points to give when user is not found', (done) => {
@@ -81,9 +78,8 @@ describe('getBalance', () => {
 
     getBalance(auth, 'unkown').then((balance) => {
       expect(balance).to.eql('Your balance is 0 and you have 0 to give');
-
-      done();
-    }).catch(err => done(err));
+    }).then(done)
+      .catch(err => done(err));
   });
 
   it('returns the points to give when user has got at least one pragma points to give', (done) => {
@@ -100,9 +96,8 @@ describe('getBalance', () => {
 
     getBalance(auth, 'foo').then((balance) => {
       expect(balance).to.eql('Your balance is 0 and you have 30 to give');
-
-      done();
-    }).catch(err => done(err));
+    }).then(done)
+      .catch(err => done(err));
   });
 
   describe('when something goes wrong', () => {
@@ -121,9 +116,7 @@ describe('getBalance', () => {
 
       getBalance(auth, 'alabeduarte').catch((err) => {
         expect(err).to.eql(new Error('Something went wrong'));
-
-        done();
-      });
+      }).then(done);
     });
   });
 });

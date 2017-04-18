@@ -9,7 +9,8 @@ const authorize = (credentials, callback) => {
   const oauth2Client = new auth.OAuth2(clientId, clientSecret, redirectUrl);
 
   oauth2Client.credentials = token;
-  callback(oauth2Client);
+
+  return callback(oauth2Client);
 };
 
 module.exports = authorize;

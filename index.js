@@ -1,16 +1,22 @@
+const ApiBuilder = require('claudia-api-builder');
+
+const api = new ApiBuilder();
 const authorize = require('./src/google-api/authorize');
 const googleCredentials = require('./src/google-api/googleCredentials');
 
 const getBalance = require('./src/getBalance');
 
-exports.handler = (event, context, callback) => {
-  console.info('event: ', event);
+module.exports = api;
 
-  authorize(googleCredentials, (auth) => {
-    const username = event.username || event.user_name
+api.get('/balance', (request) => {
+  const response = authorize(googleCredentials, (auth) => {
+    const username = request.queryString.username || request.queryString.user_name
 
-    getBalance(auth, username).then((message) => {
-      callback(null, message);
+    return getBalance(auth, username).then((message) => {
+      return message;
     }).catch(err => console.error(err));
   });
-};
+
+
+  return response;
+}, { success: { contentType: 'text/plain' } });
