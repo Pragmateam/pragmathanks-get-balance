@@ -11,3 +11,8 @@ install:
 - npm install
 script:
 - npm test
+deploy:
+  provider: script
+  script: make deploy
+  on:
+    branch: master
