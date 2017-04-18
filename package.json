@@ -1,6 +1,6 @@
 {
   "name": "pragmathanks-get-balance",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Get your pragmathanks balance.",
   "main": "index.js",
   "scripts": {
