@@ -17,10 +17,10 @@ const getBalance = (auth, username) => {
       const spreadsheet = new PragmaThanksSpreadsheet(response.values);
       if (spreadsheet.isEmpty()) return resolve('The spreadsheet is empty');
 
-      const balance = spreadsheet.getBalance(username);
+      const pointsToUse = spreadsheet.getPointsToUse(username);
       const pointsToGive = spreadsheet.getPointsToGive(username);
 
-      return resolve(`Your balance is ${balance} and you have ${pointsToGive} to give`);
+      return resolve(`To use: ${pointsToUse} pts. To give: ${pointsToGive} pts.`);
     });
   });
 };

@@ -25,7 +25,7 @@ describe('PragmaThanksSpreadsheet', () => {
     });
   });
 
-  describe('#getBalance', () => {
+  describe('#getPointsToUse', () => {
     const spreadsheetContent = [
       [],
       [],
@@ -38,15 +38,15 @@ describe('PragmaThanksSpreadsheet', () => {
     const sheet = new PragmaThanksSpreadsheet(spreadsheetContent);
 
     it('returns user balance when it has at least one pragma points', () => {
-      expect(sheet.getBalance('foo')).to.eql(20);
+      expect(sheet.getPointsToUse('foo')).to.eql(20);
     });
 
     it('returns the balance for different users', () => {
-      expect(sheet.getBalance('bar')).to.eql(42);
+      expect(sheet.getPointsToUse('bar')).to.eql(42);
     });
 
     it('returns zero balance when user is not found', () => {
-      expect(sheet.getBalance('unknown')).to.eql(0);
+      expect(sheet.getPointsToUse('unknown')).to.eql(0);
     });
   });
 

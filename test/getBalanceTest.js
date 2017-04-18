@@ -41,7 +41,7 @@ describe('getBalance', () => {
     };
 
     getBalance(auth, 'foo').then((balance) => {
-      expect(balance).to.eql('Your balance is 1 and you have 0 to give');
+      expect(balance).to.eql('To use: 1 pts. To give: 0 pts.');
     }).then(done)
       .catch(err => done(err));
   });
@@ -59,7 +59,7 @@ describe('getBalance', () => {
     };
 
     getBalance(auth, 'bar').then((balance) => {
-      expect(balance).to.eql('Your balance is 42 and you have 0 to give');
+      expect(balance).to.eql('To use: 42 pts. To give: 0 pts.');
     }).then(done)
       .catch(err => done(err));
   });
@@ -77,7 +77,7 @@ describe('getBalance', () => {
     };
 
     getBalance(auth, 'unkown').then((balance) => {
-      expect(balance).to.eql('Your balance is 0 and you have 0 to give');
+      expect(balance).to.eql('To use: 0 pts. To give: 0 pts.');
     }).then(done)
       .catch(err => done(err));
   });
@@ -95,7 +95,7 @@ describe('getBalance', () => {
     };
 
     getBalance(auth, 'foo').then((balance) => {
-      expect(balance).to.eql('Your balance is 0 and you have 30 to give');
+      expect(balance).to.eql('To use: 0 pts. To give: 30 pts.');
     }).then(done)
       .catch(err => done(err));
   });
@@ -114,7 +114,7 @@ describe('getBalance', () => {
     it('returns error', (done) => {
       google.sheets.returns(sheetsWithError);
 
-      getBalance(auth, 'alabeduarte').catch((err) => {
+      getBalance(auth, 'biz').catch((err) => {
         expect(err).to.eql(new Error('Something went wrong'));
       }).then(done);
     });
