@@ -12,10 +12,12 @@ const content = {
   }
 };
 
-fs.writeFile('./claudia.json', JSON.stringify(content), (err) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log("success");
-  }
+fs.unlink('./claudia.json', () => {
+  fs.writeFile('./claudia.json', JSON.stringify(content), (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("success");
+    }
+  });
 });
