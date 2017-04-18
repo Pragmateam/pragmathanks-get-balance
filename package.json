@@ -1,6 +1,6 @@
 {
   "name": "pragmathanks-get-balance",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Get your pragmathanks balance.",
   "main": "index.js",
   "scripts": {
@@ -20,11 +20,11 @@
   "dependencies": {
     "google-auth-library": "^0.10.0",
     "googleapis": "^18.0.0",
-    "claudia-api-builder": "^2.4.1"
+    "claudia-api-builder": "^2.4.1",
+    "claudia": "^2.11.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "claudia": "^2.11.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-config-standard": "^7.1.0",
