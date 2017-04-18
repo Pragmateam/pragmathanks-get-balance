@@ -2,7 +2,7 @@
 
 node ./infrastructure/claudiaJsonCreator.js
 ls -lah
-npm run deploy
+./node_modules/.bin/claudia update --config claudia.json
 
 # First time deploy
 #./node_modules/.bin/claudia create \
