@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+npm install
 node ./infrastructure/claudiaJsonCreator.js
 ls -lah
 ./node_modules/.bin/claudia update --config claudia.json
