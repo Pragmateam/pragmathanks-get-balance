@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-node infrastructure/claudiaJsonCreator.js
+node ./infrastructure/claudiaJsonCreator.js
 ./node_modules/.bin/claudia update --config claudia.json
 
 # First time deploy
