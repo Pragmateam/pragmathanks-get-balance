@@ -36,43 +36,15 @@ Then you can install the dependencies.
 $ make install
 ```
 
-### Running
-
-```
-$ make run username=yourname
-```
-
 ### Testing
 
 ```
 $ make test
 ```
 
-### Deploy to AWS Lambda + API GATEWAY
+### Running locally
 
-Assuming you have your AWS credentials [in
-place](https://www.terraform.io/intro/getting-started/build.html) you can just
-call `make deploy`.
-
-Before you go, you must install terraform.
-
-The backend configuration at `infrastructure/main.tf` is loaded by Terraform extremely early, before
-the core of Terraform can be initialized. This is necessary because the backend
-dictates the behavior of that core. The core is what handles interpolation
-processing. Because of this, interpolations cannot be used in backend
-configuration.
-
-More details backends are available at https://www.terraform.io/docs/backends
-
-You have to replace the bucket name in order to playaround with terraform.
-You'll have to export an environment variable with your s3 bucket, where will be
-stored your lambda function.
-
-```
-export PRAGMATHANKS_S3_BUCKET=yourbucket
-```
-
-### Turn on the Google Sheets API
+#### Turn on the Google Sheets API
 
 In order to play around with google API it also required to setup a project on
 Google Developers Console. Use [this
@@ -84,6 +56,14 @@ an learn how to get all those credentials. At the end you
 must export them as environment variables as follows:
 
 ```
+# setup to deploy with claudia.js
+export AWS_REGION='<VALUE>'
+export FUNCTION_NAME='<VALUE>'
+export CLAUDIA_LAMBDA_ROLE='<VALUE>'
+export CLAUDIA_LAMBDA_NAME='<VALUE>'
+export CLAUDIA_API_ID='<VALUE>'
+
+# setup for reading data from google sheets
 export GOOGLE_CLIENT_ID='<VALUE>'
 export GOOGLE_CLIENT_SECRET='<VALUE>'
 export GOOGLE_PROJECT_ID='<VALUE>'
@@ -93,19 +73,18 @@ export GOOGLE_AUTH_PROVIDER_CERT_URL='<VALUE>'
 export GOOGLE_REDIRECT_URIS_FIRST='<VALUE>'
 export GOOGLE_REDIRECT_URIS_LAST='<VALUE>'
 export SPREADSHEET_ID='<VALUE>'
-
 export GOOGLE_ACCESS_TOKEN='<VALUE>'
 export GOOGLE_REFRESH_TOKEN='<VALUE>'
 export GOOGLE_TOKEN_EXPIRY_DATE=<time in miliseconds>
 ```
 
-Finnally, install and initialize your infrastructure with terraform:
+Running locally:
 
 ```
-$ make terraform-install
+$ make run username=yourname
 ```
 
-Then you should be ready to deploy your lambda to AWS:
+Deploy to AWS Lambda + API Gateway:
 
 ```
 $ make deploy
