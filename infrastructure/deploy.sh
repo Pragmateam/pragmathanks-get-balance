@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 node ./infrastructure/claudiaJsonCreator.js
-npm deploy
+npm run deploy
 
 # First time deploy
 #./node_modules/.bin/claudia create \
