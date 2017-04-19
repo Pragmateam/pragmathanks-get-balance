@@ -10,4 +10,4 @@ run:
 deploy:
 	./infrastructure/deploy.sh
 
-.PHONY: install test build deploy
+.PHONY: install test run deploy
