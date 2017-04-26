@@ -1,6 +1,10 @@
 # pragmathanks-get-balance
 
-[![Build Status](https://travis-ci.org/Pragmateam/pragmathanks-get-balance.svg?branch=master)](https://travis-ci.org/Pragmateam/pragmathanks-get-balance)
+<p align="center">
+  <img src="https://img.shields.io/travis/Pragmateam/pragmathanks-get-balance.svg" alt="travis">
+  <img src="https://img.shields.io/github/license/Pragmateam/pragmathanks-get-balance.svg" alt="license">
+  <img src="https://img.shields.io/codeclimate/github/Pragmateam/pragmathanks-get-balance.svg" alt="codeclimate score">
+</p>
 
 Mid 2016 we found that people were regularly bringing this objective to life,
 whether it be experimenting with new techniques, organising a learning lunch,
