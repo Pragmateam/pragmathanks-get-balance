@@ -32,7 +32,6 @@ describe('getBalance', () => {
     spreadsheetContent = {
       values: [
         [],
-        [],
         ['foo', 'bar'],
         [],
         [1, 0],
@@ -49,7 +48,6 @@ describe('getBalance', () => {
   it('returns the balance for different users', (done) => {
     spreadsheetContent = {
       values: [
-        [],
         [],
         ['foo', 'bar', 'biz'],
         [],
@@ -68,7 +66,6 @@ describe('getBalance', () => {
     spreadsheetContent = {
       values: [
         [],
-        [],
         ['foo', 'bar'],
         [],
         [1, 0],
@@ -85,7 +82,6 @@ describe('getBalance', () => {
   it('returns the points to give when user has got at least one pragma points to give', (done) => {
     spreadsheetContent = {
       values: [
-        [],
         [],
         ['foo', 'bar'],
         [],

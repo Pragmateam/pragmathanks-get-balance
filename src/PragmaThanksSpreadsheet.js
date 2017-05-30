@@ -1,6 +1,6 @@
-const USERNAME_LIST_INDEX = 2;
-const POINTS_TO_USE_LIST_INDEX = 4;
-const POINTS_TO_GIVE_LIST_INDEX = 5;
+const USERNAME_LIST_INDEX = 1;
+const POINTS_TO_USE_LIST_INDEX = 3;
+const POINTS_TO_GIVE_LIST_INDEX = 4;
 
 class PragmaThanksSpreadsheetFinder {
   constructor(spreadsheet) {

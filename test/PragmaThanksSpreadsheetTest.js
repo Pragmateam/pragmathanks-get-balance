@@ -28,7 +28,6 @@ describe('PragmaThanksSpreadsheet', () => {
   describe('#getPointsToUse', () => {
     const spreadsheetContent = [
       [],
-      [],
       ['foo', 'bar', 'biz'],
       [],
       [20, 42, 32],
@@ -52,7 +51,6 @@ describe('PragmaThanksSpreadsheet', () => {
 
   describe('#getPointsToGive', () => {
     const spreadsheetContent = [
-        [],
         [],
         ['foo', 'bar'],
         [],
